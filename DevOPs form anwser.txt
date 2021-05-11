@@ -1,0 +1,139 @@
+1)
+Ans:
+
+#!/bin/bash
+echo The first argument is $1
+echo The second argument is $2
+echo The third argument is $3
+
+echo \$ $$  PID of the script
+echo \# $#  count arguments
+echo \? $?  last return code
+echo \* $*  all the arguments
+
+$ ./pars one two three
+The first argument is one
+The second argument is two
+The third argument is three
+$ 5610 PID of the script
+# 3 count arguments
+? 0 last return code
+* one two three all the arguments
+
+
+$ ./pars 1 2
+The first argument is 1
+The second argument is 2
+The third argument is
+$ 5612 PID of the script
+# 2 count arguments
+? 0 last return code
+* 1 2 all the arguments
+$
+
+
+
+
+
+#!/bin/bash
+
+# Call this script with at 3 parameters, for example
+# ./scriptname  -A 100 -B 110 -C 120
+MINPARAMS=10
+
+echo
+
+echo "The name of this script is \"$0\"."
+# Adds ./ for current directory
+echo "The name of this script is \"`basename $0`\"."
+# Strips out path name info (see 'basename')
+
+echo
+
+if [ -n "$1" ]              # Tested variable is quoted.
+then
+ echo "Parameter #1 is $1"  # Need quotes to escape #
+fi 
+
+if [ -n "$2" ]
+then
+ echo "Parameter #2 is $2"
+fi 
+
+if [ -n "$3" ]
+then
+ echo "Parameter #3 is $3"
+fi 
+
+echo "-----------------------------------"
+echo "All the command-line parameters are: "$*""
+
+if [ $# -lt "$MINPARAMS" ]
+then
+  echo
+  echo "This script needs at least $MINPARAMS command-line arguments!"
+fi  
+
+echo
+
+exit 0
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2) 
+Ans:
+
+python 
+
+$ webchk -i urls.txt
+linking given tag url to apper
+
+https://raw.githubusercontent.com/elastic/examples/master/Common%20Data%20Formats/nginx_logs/nginx_logs
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+3)
+Ans:
+Ex: input type (Mail -s "Subject" to-address < Filename [ ~$ mail-s "Newss Today" abc@ymail.com < NewFlash] used in Linux/Unix)
+
+Ex: output type (ls -al > listings [ ~$ ls -al > listings
+~$ cat listings
+....
+....
+....
+
+using '>>' operator
+
+~$ cat sample
+~$ echo Thanks for reading >> sample
+~$ cat sample
+$ cat music.mp3 > /dev/audio] used in Linux/Unix)
+
+
+join Command in Linux
+
+$join [OPTION] FILE1 FILE2
+
+$cat input1.txt
+1 AAYUSH
+2 APAAR
+3 HEMANT
+4 KARTIK
+
+$cat input2.txt
+1 101
+2 102
+3 103
+4 104
+
+$join input.txt input2.txt
+
+output (in one locastion):
+
+1 AAYUSH 101
+2 APAAR 102
+3 HEMANT 103
+4 KARTIK 104
